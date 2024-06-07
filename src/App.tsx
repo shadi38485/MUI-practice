@@ -22,7 +22,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/Admin" element={<AdminHomePage />} />
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Homeage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SingupPage />} />
           <Route path="/category/:id" element={<CategoryPage/>}/>

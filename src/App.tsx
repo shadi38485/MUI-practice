@@ -7,7 +7,6 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SingupPage from "./pages/SingupPage";
 import AdminHomePage from "./pages/admin/AdminHomePage";
-import CategoryItem from "./components/CategoryNav/CategoryItem";
 import CategoryPage from "./pages/User/CategoryPage";
 
 

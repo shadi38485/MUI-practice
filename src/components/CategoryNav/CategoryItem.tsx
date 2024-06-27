@@ -6,14 +6,14 @@ interface CategoryItemProps{
   id: number;
   title: string;
   description: string;
-  icon: JSX.Element;
+  icon: string;
 
 }
 
 const CategoryItem:React.FC<CategoryItemProps> = ({id, title, description, icon }) => {
   return (
-    <Link to={`/category/:${id}`}>
-        <Tab label={title} icon={icon} />
+    <Link to={`/category/${id}`}>
+        <Tab label={title} icon={<img src={icon} width={24} height={24} alt={icon} />}/>
     </Link>
   );
 };

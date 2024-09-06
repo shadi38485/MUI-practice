@@ -5,6 +5,8 @@ import MainLayout from "../Layouts/MainLayout";
 
 import { CategoryType } from "../types/Category";
 import HotelCard from "../components/hotels/HotelCard";
+import { Grid } from "@mui/material";
+import categoryService from "../services/categoryServive";
 
 const CategoryPage = () => {
   const { id } = useParams();
@@ -12,15 +14,10 @@ const CategoryPage = () => {
   const [category, setCategory] = useState<CategoryType>();
 
   useEffect(() => {
-    fetch(
-      `https://ef9fb2cd-6655-408c-9f86-95b407cafeaf.mock.pstmn.io/categories/${id}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setCategory(data);
-      })
-      .catch((error) => console.log(error));
+
+   categoryService.getCategory(id)
+   .then ((data)=>setCategory(data));
+
   }, [id]);
 
   return (
@@ -28,9 +25,11 @@ const CategoryPage = () => {
       <img src={category?.icon} alt={category?.title} />
       <p>{category?.description}</p>
       <h5>Hotels</h5>
-      {category?.hotels.map((hotel) => (
-        <HotelCard key={hotel.id} {...hotel} />
-      ))}
+      <Grid container spacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3, lg:4}}>
+        {category?.hotels.map((hotel) => (
+          <HotelCard key={hotel.id} {...hotel} />
+        ))}
+      </Grid>
     </MainLayout>
   );
 };

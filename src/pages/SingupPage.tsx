@@ -7,3 +7,5 @@ const SingupPage = () => {
 }
 
 export default SingupPage
+
+///nextjs

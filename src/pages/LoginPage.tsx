@@ -1,8 +1,12 @@
 import React from 'react'
+import SignIn from '../components/auth/SignIn'
+import AuthLayout from '../Layouts/AuthLayout'
 
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <AuthLayout>
+      <SignIn/>
+    </AuthLayout>
   )
 }
 

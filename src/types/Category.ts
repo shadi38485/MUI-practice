@@ -1,4 +1,4 @@
-import { HotelDataType } from "./Hotels";
+import { HotelDataType } from "./Hotel";
 
 export type CategoryType = {
   id: number;
@@ -7,4 +7,3 @@ export type CategoryType = {
   description: string;
   hotels: HotelDataType[];
 };
-
